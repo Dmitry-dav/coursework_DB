@@ -1,5 +1,7 @@
+from django.template.context_processors import static
 from django.urls import path
 
+from djangoProject2 import settings
 from .views import *
 
 urlpatterns = [

@@ -1,24 +1,19 @@
 {% extends 'steam/base.html' %}
 
 {% block content %}
+    <h1>{{ title }}</h1>
     {% for n in news %}
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+        <div class = "album py-5"></div>
         <div class="col">
           <div class="card shadow-sm">
-
-{#            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">#}
-{#                <title>Placeholder</title>#}
-{#                <rect width="100%" height="100%" fill="#55595c"></rect>#}
-{#                <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>#}
-{#                <img src="{{ n.image.url }}" alt="За стеклом">#}
-{#            </svg>#}
-              <img src="{{ n.image.url }}">
-
-            <div class="card-body">
+              <img src="{{ n.image.url}}"/>
+                <div class="card-body">
               <h3>{{ n.title }}</h3>
               <p class="card-text">{{ n.text }}</p>
             </div>
           </div>
+        </div>
         </div>
     </div>
     {% endfor %}
