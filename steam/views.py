@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import View, ListView
 
-from .models import News, Game, Developer, Publisher
+from .models import News, Game, Developer
 from .utils import *
 
 
@@ -21,7 +21,7 @@ class MainPageView(ListView):
 class GamesPageView(ListView):
     model = Game
     template_name = 'steam/game.html'
-    context_object_name = 'games'
+    context_object_name = 'game'
     extra_context = {'title': 'Игры'}
 
     def get_context_data(self, **kwargs):
@@ -42,13 +42,4 @@ class DevelopersPageView(ListView):
         return context
 
 
-class PublishersPageView(ListView):
-    model = Publisher
-    template_name = 'steam/publishers.html'
-    context_object_name = 'publishers'
-    extra_context = {'title': 'Издатели'}
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['header'] = header
-        return context

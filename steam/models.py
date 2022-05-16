@@ -1,17 +1,11 @@
+
 from datetime import date
 
-from django.db import models
+from django.db import models, utils
 
 
-# Create your models here.
 
 class Developer(models.Model):
-    name = models.CharField(max_length=50)
-    date_of_foundation = models.DateTimeField()
-    picture = models.ImageField()
-
-
-class Publisher(models.Model):
     name = models.CharField(max_length=50)
     date_of_foundation = models.DateTimeField()
     picture = models.ImageField()

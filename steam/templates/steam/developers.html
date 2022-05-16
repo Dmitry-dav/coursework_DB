@@ -2,4 +2,19 @@
 
 {% block content %}
     <h1>{{ title }}</h1>
+    {% for n in developers %}
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+        <div class = "album py-5"></div>
+        <div class="col">
+          <div class="card shadow-sm">
+              <img src="{{ n.picture.url}}"/>
+                <div class="card-body">
+              <h3>{{ n.name }}</h3>
+              <p class="card-text">{{ n.date_of_foundation }}</p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}

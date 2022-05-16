@@ -2,7 +2,6 @@ header = [
     {'title': 'Главная', 'url_name': 'news'},
     {'title': 'Игры', 'url_name': 'games'},
     {'title': 'Разработчики', 'url_name': 'developers'},
-    {'title': 'Издатели', 'url_name': 'publishers'}
 ]
 
 genres = [
