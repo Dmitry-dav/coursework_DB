@@ -20,7 +20,7 @@ class MainPageView(ListView):
 
 class GamesPageView(ListView):
     model = Game
-    template_name = 'steam/game.html'
+    template_name = 'steam/games.html'
     context_object_name = 'game'
     extra_context = {'title': 'Игры'}
 
@@ -43,3 +43,13 @@ class DevelopersPageView(ListView):
 
 
 
+def get_one_game(request, id: int):
+    if request.method == "GET":
+        template_name = 'steam/game.html'
+        game = Game.objects.get(pk=id)
+        context = {
+                    "title": f"{game.title}",
+                    "header": header,
+                    "game": game,
+                }
+        return render(request, template_name, context)

@@ -9,6 +9,7 @@ urlpatterns = [
     path('', MainPageView.as_view(), name='news'),
     path('games/', GamesPageView.as_view(), name='games'),
     path('developers/', DevelopersPageView.as_view(), name='developers'),
+    path('games/<int:id>/', get_one_game, name='game'),
 ]
 
 if settings.DEBUG:

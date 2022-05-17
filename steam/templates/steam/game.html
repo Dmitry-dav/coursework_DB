@@ -2,23 +2,22 @@
 
 {% block content %}
     <h1>{{ title }}</h1>
-    {% for n in game %}
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
         <div class = "album py-5"></div>
         <div class="col">
           <div class="card shadow-sm">
-              <img src="{{ n.image.url}}"/>
+              <img src="{{ game.image.url}}"/>
                 <div class="card-body">
-              <h3>{{ n.title }}</h3>
-              <p class="card-text"> <b>Описание:</b> {{ n.description }}</p>
-                    <p  class = "card-text"> <b>Рейтинг:</b> {{ n.rating }}</p>
-                    <p  class = "card-text"> <b>Дата релиза:</b> {{ n.realise_date }}</p>
-                    <p  class = "card-text"> <b>Жанр:</b> {{ n.genre }}</p>
-                    <p  class = "card-text"> <b>Разработчик:</b> {{ n.developer.name }}</p>
+              <h3>{{ game.title }}</h3>
+              <p class="card-text"> <b>Описание:</b> {{ game.description }}</p>
+                    <p  class = "card-text"> <b>Рейтинг:</b> {{ game.rating }}</p>
+                    <p  class = "card-text"> <b>Дата релиза:</b> {{ game.realise_date }}</p>
+                    <p  class = "card-text"> <b>Жанр:</b> {{ game.genre }}</p>
+                    <p  class = "card-text"> <b>Разработчик:</b> {{ game.developer.name }}</p>
             </div>
           </div>
         </div>
         </div>
     </div>
-    {% endfor %}
 {% endblock %}
